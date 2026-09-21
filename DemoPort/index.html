@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>김종덕 | 바이브코딩 · Python · HTML5 개발자</title>
+  <meta name="description" content="바이브코딩, Python, HTML5 개발자 김종덕의 프로필 웹사이트입니다. 프로젝트와 연락처를 확인하세요.">
+  <meta name="author" content="김종덕">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="김종덕 | 바이브코딩 · Python · HTML5 개발자">
+  <meta property="og:description" content="AI와 협업해 아이디어를 빠르게 동작하는 결과물로 만드는 개발자 김종덕의 포트폴리오.">
+  <meta name="theme-color" content="#0f1220">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    // 첫 페인트 전에 저장된 테마를 적용해 깜빡임을 막는다
+    try {
+      const t = localStorage.getItem('theme');
+      if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+    } catch (e) {}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#hero" class="logo">김종덕<span>.dev</span></a>
+      <nav id="nav" aria-label="주요 메뉴">
+        <ul class="nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <button id="theme-toggle" class="icon-btn" type="button" aria-label="테마 전환" title="다크/라이트 전환">
+          <span aria-hidden="true" id="theme-icon">☀</span>
+        </button>
+        <button id="menu-toggle" class="icon-btn menu-btn" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="nav">
+          <span aria-hidden="true">☰</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="hero" class="hero">
+      <div class="container">
+        <p class="eyebrow reveal">안녕하세요, 저는</p>
+        <h1 class="reveal">김종덕<span class="dot">.</span></h1>
+        <p class="tagline reveal">바이브코딩 · Python · HTML5 개발자</p>
+        <p class="lead reveal">AI와 협업하며 아이디어를 빠르게 동작하는 결과물로 만듭니다.</p>
+        <div class="hero-cta reveal">
+          <a class="btn btn-primary" href="#contact">Contact</a>
+          <a class="btn btn-ghost" href="#projects">프로젝트 보기</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title reveal">About</h2>
+        <div class="about-grid">
+          <div class="reveal">
+            <p>
+              개발자 김종덕입니다. 바이브코딩으로 아이디어를 빠르게 프로토타입하고,
+              Python과 HTML5로 실제로 동작하는 서비스와 게임을 만듭니다.
+            </p>
+            <p>
+              작은 결과물이라도 직접 실행해 보고 다듬는 것을 좋아합니다.
+              AI를 도구가 아닌 동료처럼 활용해 설계부터 구현까지의 속도를 높입니다.
+            </p>
+          </div>
+          <ul class="facts reveal">
+            <li><strong>이름</strong><span>김종덕</span></li>
+            <li><strong>분야</strong><span>바이브코딩 / Python / HTML5</span></li>
+            <li><strong>이메일</strong><span><a href="mailto:papasmf1@gmail.com">papasmf1@gmail.com</a></span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section alt">
+      <div class="container">
+        <h2 class="section-title reveal">Skills</h2>
+        <div class="card-grid" id="skills-grid"></div>
+      </div>
+    </section>
+
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section-title reveal">Projects</h2>
+        <div class="card-grid" id="projects-grid"></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section alt">
+      <div class="container contact">
+        <h2 class="section-title reveal">Contact</h2>
+        <p class="reveal">프로젝트 문의나 협업 제안은 언제든 환영합니다.</p>
+        <p class="email reveal"><a href="mailto:papasmf1@gmail.com">papasmf1@gmail.com</a></p>
+        <div class="hero-cta reveal">
+          <a class="btn btn-primary" href="mailto:papasmf1@gmail.com">메일 보내기</a>
+          <button class="btn btn-ghost" id="copy-email" type="button">이메일 복사</button>
+        </div>
+        <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year">2026</span> 김종덕. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
