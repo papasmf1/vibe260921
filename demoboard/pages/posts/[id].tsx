@@ -57,7 +57,23 @@ export default function PostDetail() {
       });
 
       if (!response.ok) {
-        throw new Error('게시물 수정에 실패했습니다.');
+        const contentType = response.headers.get('content-type');
+        let errorMsg = '게시물 수정에 실패했습니다.';
+
+        try {
+          if (contentType?.includes('application/json')) {
+            const data = await response.json();
+            errorMsg = data.error || errorMsg;
+          } else {
+            const text = await response.text();
+            console.error('API returned non-JSON response:', text);
+            errorMsg = `서버 오류 (${response.status})`;
+          }
+        } catch (parseError) {
+          console.error('Failed to parse error response:', parseError);
+          errorMsg = `서버 오류 (${response.status})`;
+        }
+        throw new Error(errorMsg);
       }
 
       const updatedPost = await response.json();
@@ -80,7 +96,23 @@ export default function PostDetail() {
       });
 
       if (!response.ok) {
-        throw new Error('게시물 삭제에 실패했습니다.');
+        const contentType = response.headers.get('content-type');
+        let errorMsg = '게시물 삭제에 실패했습니다.';
+
+        try {
+          if (contentType?.includes('application/json')) {
+            const data = await response.json();
+            errorMsg = data.error || errorMsg;
+          } else {
+            const text = await response.text();
+            console.error('API returned non-JSON response:', text);
+            errorMsg = `서버 오류 (${response.status})`;
+          }
+        } catch (parseError) {
+          console.error('Failed to parse error response:', parseError);
+          errorMsg = `서버 오류 (${response.status})`;
+        }
+        throw new Error(errorMsg);
       }
 
       router.push('/');
