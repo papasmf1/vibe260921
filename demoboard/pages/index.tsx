@@ -14,7 +14,11 @@ export default function Home() {
     try {
       const response = await fetch('/api/posts');
       const data = await response.json();
-      setPosts(data);
+      if (Array.isArray(data)) {
+        setPosts(data);
+      } else {
+        console.error('API response is not an array:', data);
+      }
     } catch (error) {
       console.error('Failed to fetch posts:', error);
     } finally {
